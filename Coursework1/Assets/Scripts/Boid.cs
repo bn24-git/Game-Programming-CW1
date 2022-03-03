@@ -16,10 +16,12 @@ public class Boid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //sets max velocity of boids
         if(velocity.magnitude > maxVelocity)
         {
             velocity = velocity.normalized * maxVelocity;
         }
+        //changes position and speed of boids
         this.transform.position += velocity * Time.deltaTime;   
         this.transform.rotation = Quaternion.LookRotation(velocity);
     }

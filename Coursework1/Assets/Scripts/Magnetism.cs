@@ -35,6 +35,7 @@ public class Magnetism : MonoBehaviour
         }
         if(found > 0)
         {
+            //makes the boids repel each other after flocking 
             average = average / found;
             boid.velocity -= Vector3.Lerp(Vector3.zero, average, average.magnitude / radius) * repulse;
         }

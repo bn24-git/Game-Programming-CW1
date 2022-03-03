@@ -19,6 +19,7 @@ public class Container : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //puts boids into "flocks"
         if(boid.transform.position.magnitude > radius)
         {
             boid.velocity += this.transform.position.normalized * (radius - boid.transform.position.magnitude) * boundry * Time.deltaTime;

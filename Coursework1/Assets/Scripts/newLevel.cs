@@ -7,6 +7,7 @@ public class newLevel : MonoBehaviour
 {
    public void nextLevel()
    {
+       //loads next scene
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
    }
 }

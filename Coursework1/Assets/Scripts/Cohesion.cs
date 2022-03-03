@@ -21,9 +21,10 @@ public class Cohesion : MonoBehaviour
         var boids = FindObjectsOfType<Boid>();
         var average = Vector3.zero;
         var found = 0;
-
+        //make sure the boid does not call itself
         foreach(var boid in boids.Where(b => b != boid))
         {
+            //checks the radius of boids for other boids
             var diff = boid.transform.position - this.transform.position;
             if(diff.magnitude < radius)
             {
@@ -33,6 +34,7 @@ public class Cohesion : MonoBehaviour
         }
         if(found > 0)
         {
+            //changes speed of boids to join together
             average = average / found;
             boid.velocity += Vector3.Lerp(Vector3.zero, average, average.magnitude / radius);
         }

@@ -8,6 +8,7 @@ public class LevelComplete : MonoBehaviour
     
     void OnTriggerEnter()
     {
+        //calls the level complete method
         gameManager.LevelComplete();
     }
 }
